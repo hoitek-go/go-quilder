@@ -6,7 +6,7 @@ const (
 )
 
 const (
-	EQUALS              = "eq"
+	EQUALS              = "equals"
 	NOT_EQUALS          = "neq"
 	GREATER_THAN        = "gt"
 	GREATER_THAN_EQUALS = "gte"
@@ -25,11 +25,16 @@ const (
 	OVERLAP             = "overlap"
 	CONTAINS            = "contains"
 	CONTAINED           = "contained"
+	STARTS_WITH         = "startsWith"
+	ENDS_WITH           = "endsWith"
+	IS_EMPTY            = "isEmpty"
+	IS_NOT_EMPTY        = "isNotEmpty"
+	IS_ANY_OF           = "isAnyOf"
 )
 
 var SQL = map[string]string{
 	EQUALS:              "=",
-	NOT_EQUALS:          "<>",
+	NOT_EQUALS:          "!=",
 	GREATER_THAN:        ">",
 	GREATER_THAN_EQUALS: ">=",
 	LESS_THAN:           "<",
@@ -47,4 +52,9 @@ var SQL = map[string]string{
 	OVERLAP:             "=",
 	CONTAINS:            "LIKE",
 	CONTAINED:           "LIKE",
+	STARTS_WITH:         "LIKE",
+	ENDS_WITH:           "LIKE",
+	IS_EMPTY:            "IS NULL",
+	IS_NOT_EMPTY:        "IS NOT NULL",
+	IS_ANY_OF:           "IN",
 }
