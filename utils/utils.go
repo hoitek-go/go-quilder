@@ -76,9 +76,9 @@ func ParseSQLOperator(op string, value interface{}) *filters.OperatorValue {
 	var val interface{} = strVal
 
 	switch op {
-	case operators.LIKE, operators.NOT_LIKE, operators.IGNORE_LIKE, operators.NOT_IGNORE_LIKE:
+	case operators.CONTAINS, operators.STARTS_WITH, operators.ENDS_WITH:
 		val = "%" + strVal + "%"
-	case operators.IN, operators.NOT_IN:
+	case operators.IS_ANY_OF:
 		val = getJsonSlice(strVal)
 	}
 
